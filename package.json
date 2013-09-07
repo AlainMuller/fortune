@@ -1,0 +1,15 @@
+{
+    "name": "fortune",
+    "version": "0.0.1",
+    "description": "WebApp Node.js permettant de gérer une liste de fortunes (citations et autres).",
+    "author": "Alain Muller",
+    "private": true,
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "express": "3.3.8",
+        "jade": "*",
+        "mongodb": "*"
+    }
+}

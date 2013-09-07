@@ -1,0 +1,6 @@
+# Node.js module dependencies
+node_modules/
+
+# IntelliJ IDEA Projet Files
+.idea/workspace.xml
+.idea/tasks.xml
