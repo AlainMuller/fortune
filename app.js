@@ -8,7 +8,6 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 // Modules locaux
-var routes = require('./routes');
 var quotes = require('./routes/quotes');
 
 var app = express();
@@ -29,16 +28,13 @@ if ('development' == app.get('env')) {
     app.use(express.errorHandler({dumpExceptions: true, showStack: true}));
 }
 
-// Affichage de l'application
-app.get('/', routes.index);
-
 // Gestion des citations
 app.get('/quotes', quotes.findAll);
 app.get('/quotes/:id', quotes.findById);
 app.get('/quotes/author/:author', quotes.findByAuthor);
-//app.post('/quotes', quotes.addQuote);
-//app.put('/quotes/:id', quotes.updateQuote);
-//app.delete('/quotes/:id', quotes.deleteQuote);
+app.post('/quotes', quotes.addQuote);
+app.put('/quotes/:id', quotes.updateQuote);
+app.delete('/quotes/:id', quotes.deleteQuote);
 
 
 // Lancement du serveur
